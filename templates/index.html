@@ -1,0 +1,42 @@
+<html lang="html">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Er det torsdag, Troels?</title>
+        <meta name="title" content="Er det torsdag?">
+        <meta name="author" content="de-klubben@de-klubben.aau.dk">
+        <meta name="robots" content="index,follow">
+        <meta charset="UTF-8">
+        <meta http-equiv="content-language" content="da">
+        <!--
+        Hosted af DE-klubben og Studentersamfundet
+        https://de-klubben.studentersamfundet.aau.dk/
+        https://studentersamfundet.aau.dk/
+        https://github.com/Studentersamfundet/er-det-torsdag
+        -->
+    </head>
+    <body background="imgs/background.png">
+        <table style="height: 100%; width: 100%;">
+            <tbody>
+                <tr>
+                    <td style="text-align: center;">
+                        <h1 style="color: white; font-family: verdana, arial;">Er det torsdag, Troels?</h1>
+                        {{if .Torsdag}}
+                            {{if .Patrick}}
+                                <img src="imgs/1_spd2011.jpg" alt="JA!">
+                            {{else}}
+                                <img src="imgs/1.jpg" alt="JA!">
+                            {{end}}
+                        {{else}}
+                            <img src="imgs/0.jpg" alt="NEJ!">
+                        {{end}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="display:none;">
+            <img src="imgs/1.jpg" alt="JA!">
+            <img src="imgs/0.jpg" alt="NEJ!">
+            <img src="imgs/1_spd2011.jpg" alt="JA!">
+        </div>
+    </body>
+</html>
