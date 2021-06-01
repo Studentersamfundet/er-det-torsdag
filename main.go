@@ -7,12 +7,14 @@ import (
 )
 
 func main() {
-	templ, err := template.ParseFiles("templates/index.html")
+	templ, err := template.New("").Funcs(template.FuncMap{
+			"safe": func(s string) template.HTML { return template.HTML(s) },
+		}).ParseFiles("templates/index.html")
 	if err != nil {
 		panic(err)
 	}
 
-	http.HandleFunc("/", mainHandler(templ))
+	http.HandleFunc("/", mainHandler(templ.Lookup("index.html")))
 	http.Handle("/imgs/", http.StripPrefix("/imgs/", http.FileServer(http.Dir("./imgs"))))
 
 	err = http.ListenAndServe("0.0.0.0:80", nil)
