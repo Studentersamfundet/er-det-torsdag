@@ -8,8 +8,8 @@ import (
 
 func main() {
 	templ, err := template.New("").Funcs(template.FuncMap{
-			"safe": func(s string) template.HTML { return template.HTML(s) },
-		}).ParseFiles("templates/index.html")
+		"safe": func(s string) template.HTML { return template.HTML(s) },
+	}).ParseFiles("templates/index.html")
 	if err != nil {
 		panic(err)
 	}
